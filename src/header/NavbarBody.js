@@ -1,14 +1,27 @@
-# React Album
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import { lorem } from "faker";
 
-with React-Bootstrap
+const Contact = () => (
+  <>
+    <h4 className="text-white">Contact</h4>
+    <ul className="list-unstyled">
+      {["Follow on Twitter", "Like on Facebook", "Email me"].map((text, i) => (
+        <li key={i}>
+          <Button variant="link" className="text-white text-nowrap">
+            {text}
+          </Button>
+        </li>
+      ))}
+    </ul>
+  </>
+);
 
-## Sliding Navbar Body
+const lorem20 = lorem.words(20);
 
-Implemented with React Hooks
-
-`NavbarBody.js`
-
-```jsx
 const NavbarBody = props => {
   const ref = React.useRef(null);
   const [height, setHeight] = React.useState(0);
@@ -39,17 +52,5 @@ const NavbarBody = props => {
     </div>
   );
 };
-```
 
-`Styles.scss`
-
-```css
-.NavbarBody {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  transition: height 0.3s ease;
-  overflow: hidden;
-}
-```
+export default NavbarBody;
