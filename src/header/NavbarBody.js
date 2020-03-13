@@ -38,6 +38,9 @@ const NavbarBody = props => {
       className={props.show ? classes + " show" : classes}
       style={{ height: currentHeight + "px" }}
     >
+      {/* If you put ref in the wrapping div it won't work because it's clientHeight will be stuck at 0. 
+        whereas nested element's height will always be as high as its content.
+      */}
       <Container ref={ref}>
         <Row>
           <Col sm="8" md="7" className="py-4">
